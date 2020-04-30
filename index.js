@@ -32,4 +32,4 @@ writeToFile("readme.md", "GitHub")
 
 init();
 
-module.exports = index;
+module.exports = questions;

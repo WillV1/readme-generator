@@ -1,5 +1,5 @@
 var axios = require("axios");
-var index = require("./utils/index.js");
+var questions = require("./index.js");
 
 const api = {
   getUser(username) {

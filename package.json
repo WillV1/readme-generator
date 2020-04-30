@@ -19,5 +19,10 @@
   "bugs": {
     "url": "https://github.com/WillV1/readme-generator/issues"
   },
-  "homepage": "https://github.com/WillV1/readme-generator#readme"
+  "homepage": "https://github.com/WillV1/readme-generator#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
+    "inquirer": "^7.1.0"
+  }
 }
