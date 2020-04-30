@@ -1,0 +1,23 @@
+{
+  "name": "readme-generator",
+  "version": "1.0.0",
+  "description": "This is a package to dynamically generate a ReadMe file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WillV1/readme-generator.git"
+  },
+  "keywords": [
+    "readme",
+    "node"
+  ],
+  "author": "William VanHook",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WillV1/readme-generator/issues"
+  },
+  "homepage": "https://github.com/WillV1/readme-generator#readme"
+}
