@@ -1,9 +1,11 @@
-var inquirer = require("inquirer");
-var api = require("./api.js");
-var fs = require("fs");
-var path = require("path");
+const inquirer = require("inquirer");
+import { generateMarkdown } from './generateMarkdown';
+const fs = require("fs");
+const util = require("util");
 
-const questions = [
+const writeFileAsync = util.promisify(fs.writeFile);
+
+function userQuestions() {
   inquirer
     .prompt([
       {
@@ -53,26 +55,31 @@ const questions = [
         message: "What does the user need to know about contributing to the repo?",
         name: "project"
       }
-    ]),
-];
+    ])
+}
 
-// function writeToFile(fileName, data) {
-//     fs.writeFileSync(path.join(__dirname, fileName), data)
+function writeToFile(fileName, data) {
 
-// }
+  const md = inquirer.prompt(answers);
+  return writeFileAsync("readme.md", md)
 
-// function init() {
-// inquirer.prompt(questions)
-// .then(data => {
-//     console.log(data.username);
-//     var imageURL = ''
-//     api.getUser(data.username).then(data => { imageURL = (data.data.avatar_url)});
+}
 
-// writeToFile("readme.md", "GitHub")
+writeToFile();
 
-// }) 
+async function init() {
+  try {
+    const answers = await userQuestions();
 
-// }
+    const md = await generateMarkdown(answers);
 
-// init();
+    await writeToFileAsync("readme.md", md)
+
+  } catch (err) {
+    console.log(err);
+  }
+
+}
+
+init();
 

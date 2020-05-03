@@ -4,6 +4,7 @@ function generateMarkdown(data) {
     return `
   # ${data.title}
 
+
   ## Description
   
   ${data.description}
@@ -62,3 +63,5 @@ function generateMarkdown(data) {
 
   `;
   }
+
+  export {generateMarkdown};
