@@ -4,6 +4,8 @@ var fs = require("fs");
 var path = require("path");
 
 const questions = [
+  inquirer
+    .prompt([
       {
         type: "input",
         message: "What is your GitHub username?",
@@ -12,7 +14,7 @@ const questions = [
       {
         type: "input",
         message: "What is your project name?",
-        name: "project"
+        name: "title"
       },
       {
         type: "input",
@@ -21,15 +23,15 @@ const questions = [
       },
       {
         type: "checkbox",
-    message: "What kind of license should your project have?",
-    name: "license",
-    choices: [
-      "MIT", 
-      "APACHE 2.0", 
-      "GPL 3.0", 
-      "BSD 3",
-      "None"
-    ]
+        message: "What kind of license should your project have?",
+        name: "license",
+        choices: [
+          "MIT",
+          "APACHE 2.0",
+          "GPL 3.0",
+          "BSD 3",
+          "None"
+        ]
       },
       {
         type: "input",
@@ -48,14 +50,10 @@ const questions = [
       },
       {
         type: "input",
-        message: "What does the user need to know about using the repo?",
-        name: "repo"
-      },
-      {
-        type: "input",
         message: "What does the user need to know about contributing to the repo?",
         name: "project"
-      },
+      }
+    ]),
 ];
 
 // function writeToFile(fileName, data) {
