@@ -1,23 +1,28 @@
 var axios = require("axios");
-var questions = require("./index.js");
+
 
 const api = {
-  getUser(username) {
+    getUser(username) {
 
-async function getEmail () {
-  try {
-    var email = await axios.get('https://api.github.com/users/' + username + '/events/public')
-      console.log(response.email);
-      var image = await axios.get('https://api.github.com/users/' + username + '/events/public')
-      console.log(response.avatar_url);
-  } catch (error) {
-    console.error(error)
-  }
+        function getInfo() {
+
+            axios.get('https://api.github.com/users/' + username)
+                .then(response => {
+                    console.log(response.data.avatar_url);
+                    console.log(response.data.email);
+                })
+
+                .catch(error => {
+                    console.error(error);
+                });
+
+
+
+
+        };
+        getInfo();
+    }
+
 }
-
-getEmail()    
-    
-  }
-};
 
 module.exports = api;
