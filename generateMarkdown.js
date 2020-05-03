@@ -64,4 +64,4 @@ function generateMarkdown(data) {
   `;
   }
 
-  export {generateMarkdown};
+ module.exports = {functionOne :generateMarkdown()};
