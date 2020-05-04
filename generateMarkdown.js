@@ -1,6 +1,6 @@
 var api = require("./api.js");
 
-function generateMarkdown(data) {
+function generateMarkdown(answers) {
     return `
   # ${data.title}
 
@@ -64,4 +64,4 @@ function generateMarkdown(data) {
   `;
   }
 
- module.exports = {functionOne :generateMarkdown()};
+ module.exports = {functionTwo :generateMarkdown()};

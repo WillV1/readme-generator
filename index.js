@@ -1,4 +1,4 @@
-const inquirer = require("inquirer");
+//const inquirer = require("inquirer");
 var generateMarkdown = require("./generateMarkdown.js")
 const fs = require("fs");
 const util = require("util");
@@ -70,7 +70,7 @@ async function init(answers) {
   try {
     const answers = await userQuestions();
 
-    const md = await functionOne();
+    const md = await generateMarkdown.functionTwo();
 
     await writeFileAsync("readme.md", md)
 
