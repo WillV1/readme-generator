@@ -1,6 +1,8 @@
-var api = require("./api.js");
+let api = require("./api.js");
+return api.apiCall();
 
-function generateMarkdown(answers) {
+
+function generateMarkdown(data) {
     return `
   # ${data.title}
 
@@ -57,11 +59,11 @@ function generateMarkdown(answers) {
 
   `Questions
 
-  ${data.avatar_url}
+  ${response.data.avatar_url}
 
-  If you have any questions about the repo, open an issue or contact ${username} directly at ${data.email}.
+  If you have any questions about the repo, open an issue or contact ${data.username} directly at ${response.data.email}.
 
   `;
   }
 
- module.exports = {functionTwo :generateMarkdown()};
+ exports.generateMarkdown = generateMarkdown(data);

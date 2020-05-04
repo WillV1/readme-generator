@@ -2,6 +2,7 @@ var axios = require("axios");
 const inquirer = require("inquirer");
 
 
+function apiCall() {
     inquirer.prompt([
         {
             type: "input",
@@ -65,7 +66,6 @@ const inquirer = require("inquirer");
 
     })
 
+}
 
-
-
-//module.exports = {functionOne: getUser (), functionThree: questions()};
+exports.apiCall = apiCall;
