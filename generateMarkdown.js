@@ -1,11 +1,12 @@
 let api = require("./api.js");
-return api.apiCall();
+
+let apiAnswers = api.apiCall();
 
 
-function generateMarkdown(data) {
+  function generateMarkdown(data) {
+
     return `
   # ${data.title}
-
 
   ## Description
   
@@ -30,12 +31,12 @@ function generateMarkdown(data) {
   To install necessary dependencies, run the following command: 
 
   ```
-  
-  `${data.dependencies}
+
+      `${data.dependencies}
 
   ```
 
-  `## Usage
+      `## Usage
 
   ${data.usage}
 
@@ -52,12 +53,12 @@ function generateMarkdown(data) {
   To run tests, run the following command:
 
   ```
-  
-  `${data.test}
+
+      `${data.test}
 
   ```
 
-  `Questions
+      `Questions
 
   ${response.data.avatar_url}
 
@@ -66,4 +67,5 @@ function generateMarkdown(data) {
   `;
   }
 
- exports.generateMarkdown = generateMarkdown(data);
+
+ module.exports = generateMarkdown;
