@@ -57,7 +57,7 @@ ${data.test}
 
 ## Questions
 
-${url}
+<img src ="${url}" alt="Github profile image" width="100px" height="100px" />
 
 If you have any questions about the repo, open an issue or contact ${data.username} directly at ${data.email}.
 
