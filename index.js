@@ -77,7 +77,7 @@ function init() {
         .then(function (avatar) {
           const url = (avatar.data.avatar_url)
           console.log(data)
-          return writeFileAsync("ReadMe.md", generateMarkdown(data, url));
+          return writeFileAsync("README.md", generateMarkdown(data, url));
         })
 
     })
