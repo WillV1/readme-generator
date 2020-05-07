@@ -1,71 +1,68 @@
-let api = require("./api.js");
-
-let apiAnswers = api.apiCall();
-
-
-  function generateMarkdown(data) {
-
+function generateMarkdown(data, url) {
+    console.log(data);
     return `
-  # ${data.title}
+# ${data.title}
 
-  ## Description
+## Description
   
-  ${data.description}
+${data.description}
 
-  ## Table of Contents
+## Table of Contents
 
-  * [Installation]
+* [Installation]
 
-  * [Usage]
+* [Usage]
   
-  * [License]
+* [License]
 
-  * [Contributing]
+* [Contributing]
 
-  * [Tests]
+* [Tests]
 
-  * [Questions]
+* [Questions]
 
-  ## Installation 
+## Installation 
 
-  To install necessary dependencies, run the following command: 
+To install necessary dependencies, run the following command: 
 
-  ```
+\`\`\`
 
-      `${data.dependencies}
+${data.dependencies}
 
-  ```
+\`\`\`
 
-      `## Usage
+## Usage
 
-  ${data.usage}
+${data.usage}
 
-  ## License
+## License
 
-  This project is licensed under the ${data.license} license.
+This project is licensed under the ${data.license} license.
 
-  ## Contributing 
+## Contributing 
 
-  ${data.project}
+${data.project}
 
-  ## Tests 
+## Tests 
 
-  To run tests, run the following command:
+To run tests, run the following command:
 
-  ```
+\`\`\`
 
-      `${data.test}
+${data.test}
 
-  ```
+\`\`\`
 
-      `Questions
+Questions
 
-  ${response.data.avatar_url}
+${url}
 
-  If you have any questions about the repo, open an issue or contact ${data.username} directly at ${response.data.email}.
+If you have any questions about the repo, open an issue or contact ${data.username} directly at ${data.email}.
 
-  `;
-  }
+`;
+}
 
 
- module.exports = generateMarkdown;
+
+
+module.exports = generateMarkdown;
