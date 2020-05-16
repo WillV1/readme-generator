@@ -18,4 +18,4 @@ Use of Axios package to make Github API call to access personal Github avatar.
 
 
 
-Please see GIF of deployed application within this repo.
+Please see GIF of deployed application within this repo. Node.js-README.gif
